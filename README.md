@@ -2,7 +2,6 @@
 
 The goal for this project is to be able to remove a given furniture from a room and replace it with another specified furniture. This would be useful if you for example found a couch on Ikea and you would like to see how it would look in your room. You would then give the model a picture of your room where you want the furniture and an image of the furniture, and it would show you how it would look. To reach this goal, we will try different methods of varying complexity using ComfyUI.
 
-
 # How to open ComfyUI
 There are multiple ways to download and use ComfyUI. We both tried to download it on our computers and with Google Colab. We were later told that Google Colab is now no longer allowed for using ComfyUI, but we have not seen any evidence of this elsewhere. Do it at your own risk.
 
@@ -24,7 +23,6 @@ instructions can be found below.
 
 ## With Google Colab
 To run ComfyUI with Google Colab you need to go to https://colab.research.google.com/github/comfyanonymous/ComfyUI/blob/master/notebooks/comfyui_colab.ipynb, or https://colab.research.google.com/github/ltdrdata/ComfyUI-Manager/blob/main/notebooks/comfyui_colab_with_manager.ipynb to get it with a manager which makes it easier to download other models. You then save a copy to your own disk in Google Colab. Make sure that you use for example the T4 GPU in Colab. Check both boxes USE\_GOOGLE\_DRIVE and UPDATE\_ COMFY\_ UI. Then you run the first three code chunks. After running the third chunk, you will get a link after the text "This is the URL to access ComfyUI:". You click the link and you will then be redirected to the website where you can use ComfyUI. Every time you queue a prompt in the website you will be able to see it as an output in Colab from the third code chunk. If you share the link, other people are able to run the ComfyUI workspace through your Colab workspace.
-
 
 The upside with this method, is that it is available for all type of computers, as far as we know at least. It is also easy and fast to download and you are able to use the GPU given by Colab.
 
@@ -66,4 +64,32 @@ models/diffusers/marigold model - https://huggingface.co/prs-eth/marigold-depth-
 IPAdaper model - https://github.com/cubiq/ComfyUI_IPAdapter_plus?tab=readme-ov-file#installation
 
 For the IPAdapter you need to download the first file under the subtitle /ComfyUI/models/clip_vision on github and all the other files under the subtitle /ComfyUI/models/ipadapter, except the deprecated files, and place them in the corresponding folders.
+
+The models from hugginface were downloaded through a new Command Prompt and took some time
+to download. The rest of the models were from github and were just downloaded through the link.
+You can open workspace model3.json in the folder FinalWorkspace to get the best model. We have
+published a few other workspaces in addition, but we recommend model3.json. The workspace can be seen below.
+
+![model3](https://github.com/dinasolskinnsbakk/GenerativeAI/assets/164348782/5fca24a4-3684-41d2-b94f-30bbedc894e2)
+
+To use the workspaces for different input images, you only need to change the colored nodes. The
+green prompt is the positive prompt, the red is the negative and in the purple you need to insert the
+images or write what object you want to mask. The black nodes should generally not be changed, but in
+some cases you might want to finetune the weights in case of a bad output. In some of the workspaces,
+you need to make a mask yourself of where you want to insert your furniture. You only need to right click
+on the image of the room, open in MaskEditor and make a square around the object in the room. For
+model 3, in group ”Cut and Paste”, you need to right click on the furniture image, open in SAM Detector
+and right click on the furniture for it to be masked.
+
+For most of these models the prompt is very important. You might need to spend some time getting
+the best prompt for your image. Here, a WDtagger can be useful to get some descriptions of your images.
+
+Initially this project was intended for the user to be able to use their own photos as input, especially
+for the room. A photo you would take with your own camera is very high resolution, so it generally has
+a large file size. If we used a 1MB photo of a room as input, it would take almost one hour to generate
+the result. We tried to compress the input photo as much as we could, getting it to around 400kB in size,
+but this would still take 10 to 20 minutes. Therefore, we had to choose images from google as our input.
+If you still want to use your own photo as input, we found that it was best to make it a JPEG file and
+choose the lowest quality level. There probably is methods in ComfyUI to compress your image further,
+but we did not make this a priority.
 
