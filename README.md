@@ -8,7 +8,7 @@ There are multiple ways to download and use ComfyUI. We both tried to download i
 ## Downloading directly
 With windows you can simply download ComfyUI by following the instructions on https://github.com/comfyanonymous/ComfyUI?tab=readme-ov-file#windows. You will have to download 7-Zip, if you do
 not already have it, and then download the ComfyUI files. Having not used 7-Zip before, it took a minute
-to understand have we could extract with 7-Zip, but it was relatively simple. You will also have to make
+to understand how we could extract with 7-Zip, but it was relatively simple. You will also have to make
 sure that you download some model, for instance from huggingface, and put it in the checkpoint folder, so
 you are able to open the program. After doing all this we were actually not able to launch the program.
 We tried launching by pressing ”run cpu” and it opened a text editor window that said ”Press any key
