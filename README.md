@@ -14,7 +14,7 @@ you are able to open the program. After doing all this we were actually not able
 We tried launching by pressing ”run cpu” and it opened a text editor window that said ”Press any key
 to continue . . .”, but when we pressed something it just shut down. When googling the problem we
 saw that others have had the same problem and found no solution. We also tried some suggestions from
-others were we tried updating, adding other models to the checkpoint folder and just downloading the
+others where we tried updating, adding other models to the checkpoint folder and just downloading the
 comfyUI file all over, but nothing seemed to help and we always ended up with the same problem.
 
 If you have a MacBook, it seems that ComfyUI is only available for Apple mac silicon and not old
